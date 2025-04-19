@@ -1,0 +1,6 @@
+Download the zip file containing all the logs and the README.
+Extract the files using your preferred tool or command:
+unzip soc_warrior_logs.zip
+Review each log file to understand the attacker's movements.
+  Open the logs using a text editor (e.g., nano, vim, or cat in the terminal).
+  Check timestamps, IP addresses, and specific command execution to piece together the attacker's activities.
