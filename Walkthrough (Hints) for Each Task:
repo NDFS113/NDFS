@@ -1,0 +1,15 @@
+Task 1: SSH Brute Force
+Hint: Look for repeated failed login attempts from the same IP address. After several failed attempts, see if there’s any successful login.
+Explanation: The attacker likely used brute-force techniques to guess the SSH credentials. Once they gained access, they proceeded to execute more malicious commands.
+
+Task 2: Reverse Shell Execution
+Hint: Search for any commands related to downloading files (e.g., wget) or executing shell commands (e.g., bash or nc).
+Explanation: After gaining SSH access, the attacker tried to set up a reverse shell. By analyzing the bash history, you can pinpoint the commands they executed to achieve this.
+
+Task 3: Privilege Escalation
+Hint: Review the bash history for commands executed with sudo or other signs of privilege escalation.
+Explanation: The attacker escalated their privileges using a reverse shell and system misconfigurations. Understanding the commands they used for this step is crucial.
+
+Task 4: Persistence Mechanism
+Hint: Check the cron logs for any new cron jobs that might be suspicious. The attacker may have added a new cron job to ensure access remains persistent.
+Explanation: Attackers often create cron jobs to execute malicious scripts periodically, ensuring that their access isn't lost after reboot or service restart.
