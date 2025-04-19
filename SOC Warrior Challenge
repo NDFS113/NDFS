@@ -1,0 +1,59 @@
+README for SOC Warrior Challenge Room
+Room Objective:
+In this room, you will analyze various logs to trace an attacker's actions. The logs contain information about brute-force attempts, reverse shell execution, privilege escalation, and persistence mechanisms. Your goal is to investigate these logs and piece together the attacker's activities, following a Security Operations Center (SOC) workflow.
+
+Log Files:
+auth.log
+This log file contains information about authentication attempts to the server. You will find records of failed and successful SSH login attempts here. Look for brute-force login attempts and identify any potential security risks.
+
+What to look for: Failed login attempts, especially with the same source IP address.
+
+Key Activity: Look for successful SSH login after multiple failed attempts (Brute-force).
+
+bash_history
+This file contains the command history for the user. By analyzing it, you can see the commands that were executed by the attacker, including any reverse shell commands or payload execution.
+
+What to look for: Reverse shell commands, unusual scripts, or any suspicious downloads.
+
+Key Activity: Find the reverse shell command, which is a critical step in the attacker's move to escalate privileges.
+
+access.log
+The access log for the web server. This log tracks HTTP requests made to the server. Look for any suspicious activity, like downloading a malicious script or accessing restricted files.
+
+What to look for: Suspicious GET requests, especially if they involve a malicious file like malicious.sh.
+
+Key Activity: Detect the malicious download request that leads to further compromise.
+
+cron.log
+This log file contains information about scheduled cron jobs on the server. Review it for any added cron jobs that could indicate an attempt to maintain persistence.
+
+What to look for: Any new cron jobs that seem unusual, such as running a script that shouldn't be there.
+
+Key Activity: Find the cron job that executes a potentially malicious script for persistence.
+
+incident_notes.txt
+This file contains handover notes for the SOC team. It helps to give context to the attacker's movements and what has been observed so far.
+
+What to look for: Summarized actions of the attacker and details about the attack's timeline.
+
+soc_mission.txt
+This file provides you with your mission brief. Read it carefully to understand the overall context and the objective of your analysis.
+
+README.txt
+This file contains instructions on how to use the logs and how to answer the questions.
+
+How to Extract and Analyze the Logs:
+Download the zip file containing all the logs and the README.
+
+Extract the files using your preferred tool or command:
+
+bash
+Copy
+Edit
+unzip soc_warrior_logs.zip
+Review each log file to understand the attacker's movements.
+
+Open the logs using a text editor (e.g., nano, vim, or cat in the terminal).
+
+Check timestamps, IP addresses, and specific command execution to piece together the attacker's activities.
+
